@@ -49,7 +49,7 @@ class _NewsListState extends State<NewsList> {
           newsSource: news.articles[index].source.name,
         );
       }),
-      itemCount: news.totalResults,
+      itemCount: news.articles.length,
     );
   }
 }
