@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../helpers/app_colors.dart';
 
 class ChipFilterItem extends StatelessWidget {
   const ChipFilterItem({
@@ -12,7 +13,7 @@ class ChipFilterItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
+    return ChoiceChip(
       elevation: 2.0,
       shadowColor: const Color.fromARGB(54, 0, 0, 0),
       avatar: Image.asset(imageName, width: 19.0),
@@ -22,6 +23,8 @@ class ChipFilterItem extends StatelessWidget {
         filterName,
         style: Theme.of(context).textTheme.titleSmall,
       ),
+      selected: false,
+      selectedColor: AppColors.lightTextColor,
     );
   }
 }
