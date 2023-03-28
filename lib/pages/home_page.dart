@@ -13,6 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,10 +108,9 @@ class HomePage extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: Container(
-                  padding: AppGenricStyles.paddingForList,
-                  height: 350.0,
-                  child: PopularNewsList()
-                ),
+                    padding: AppGenricStyles.paddingForList,
+                    height: 350.0,
+                    child: PopularNewsList()),
               ),
               const SizedBox(
                 height: 16.0,

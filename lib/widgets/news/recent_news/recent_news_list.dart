@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'recent_news_card_item.dart';
 import '../../../services/news_service.dart';
 import '../../../models/news.dart';
+import '../../../pages/news_details_page.dart';
 
 class NewsList extends StatefulWidget {
   const NewsList({Key? key}) : super(key: key);
@@ -17,6 +18,11 @@ class _NewsListState extends State<NewsList> {
   void initState() {
     super.initState();
     newsService = NewsService();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -40,13 +46,29 @@ class _NewsListState extends State<NewsList> {
 
   Widget _buildListView(News news) {
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemBuilder: ((context, index) {
-        return NewsCardItem(
-          newsImage: news.articles[index].urlToImage,
-          newsTitle: news.articles[index].title,
-          newesDatePublished: news.articles[index].publishedAt.toString(),
-          newsSource: news.articles[index].source.name,
+        return GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => NewsDetailsPage(
+                  newsImage: news.articles[index].urlToImage,
+                  newsTitle: news.articles[index].title,
+                  newesDatePublished: news.articles[index].publishedAt,
+                  newsDescription: news.articles[index].description,
+                  newsUrl: news.articles[index].url,
+                ),
+              ),
+            );
+          },
+          child: NewsCardItem(
+            newsImage: news.articles[index].urlToImage,
+            newsTitle: news.articles[index].title,
+            newesDatePublished: news.articles[index].publishedAt,
+            newsSource: news.articles[index].source.name,
+          ),
         );
       }),
       itemCount: news.articles.length,

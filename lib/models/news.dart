@@ -71,7 +71,7 @@ class Article {
         "description": description,
         "url": url,
         "urlToImage": urlToImage,
-        "publishedAt": publishedAt.toIso8601String(),
+        "publishedAt": publishedAt,
         "content": content,
     };
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../helpers/app_genric_styles.dart';
+import '../../../helpers/covert_datetime.dart';
 
 class NewsCardItem extends StatelessWidget {
   NewsCardItem({
@@ -12,13 +13,13 @@ class NewsCardItem extends StatelessWidget {
 
   late String? newsImage;
   final String newsTitle;
-  final String newesDatePublished;
+  final DateTime newesDatePublished;
   final String? newsSource;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 25.0),
+      padding: const EdgeInsets.only(right: 25.0, bottom: 5.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -80,12 +81,19 @@ class NewsCardItem extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                newesDatePublished,
-                                style: Theme.of(context).textTheme.labelSmall,
+                                CovertDatetime()
+                                    .displayDatetime(newesDatePublished),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelSmall
+                                    ?.copyWith(fontWeight: FontWeight.w300),
                               ),
                               Text(
                                 newsSource!,
-                                style: Theme.of(context).textTheme.labelSmall,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelSmall
+                                    ?.copyWith(fontWeight: FontWeight.w300),
                               ),
                             ],
                           ),
