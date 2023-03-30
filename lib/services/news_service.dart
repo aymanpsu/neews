@@ -10,7 +10,7 @@ Map<String, String> requestHeaders = {
 };
 
 class NewsService {
-  Future<News> fetchLatestNews(int page, int pageNumber,
+  Future<News> fetchRecentNews(int page, int pageNumber,
       [String? category, String? country]) async {
     try {
       final response = await http.get(
@@ -27,7 +27,32 @@ class NewsService {
       } else {
         // If the server did not return a 200 OK response,
         // then throw an exception.
-        throw Exception('${response.statusCode} ${response.reasonPhrase} \n${response.body}');
+        throw Exception(
+            '${response.statusCode} ${response.reasonPhrase} \n${response.body}');
+      }
+    } catch (e) {
+      throw Exception('Failed to load news due to $e');
+    }
+  }
+
+  Future<News> fetchPopularNews(int page, int pageSize) async {
+    try {
+      final response = await http.get(
+        Uri.parse(
+          '$baseUrl/everything?pageSize=$pageSize&apiKey=$apiKey&page=$page&sortBy=popularity&q=trend',
+        ),
+        headers: requestHeaders,
+      );
+      if (response.statusCode == 200) {
+        // If the server did return a 200 OK response,
+        // then parse the JSON.
+        final newsData = newsFromJson(response.body);
+        return newsData;
+      } else {
+        // If the server did not return a 200 OK response,
+        // then throw an exception.
+        throw Exception(
+            '${response.statusCode} ${response.reasonPhrase} \n${response.body}');
       }
     } catch (e) {
       throw Exception('Failed to load news due to $e');

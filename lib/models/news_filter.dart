@@ -1,9 +1,7 @@
-enum FilterState { selected, nonSelected }
-
 class NewsFilter {
   String name;
   String icon;
-  FilterState? state = FilterState.nonSelected;
+  bool? state = false;
 
   NewsFilter({
     required this.name,

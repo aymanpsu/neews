@@ -28,7 +28,7 @@ class _NewsListState extends State<NewsList> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: newsService.fetchLatestNews(1, 10),
+      future: newsService.fetchRecentNews(1, 8),
       builder: ((context, snapshot) {
         if (snapshot.hasData) {
           News news = snapshot.data!;
@@ -59,6 +59,7 @@ class _NewsListState extends State<NewsList> {
                   newesDatePublished: news.articles[index].publishedAt,
                   newsDescription: news.articles[index].description,
                   newsUrl: news.articles[index].url,
+                  newsContent: news.articles[index].content,
                 ),
               ),
             );

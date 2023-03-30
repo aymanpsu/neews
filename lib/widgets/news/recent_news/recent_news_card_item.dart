@@ -44,8 +44,7 @@ class NewsCardItem extends StatelessWidget {
                       height: double.infinity,
                     );
                   },
-                  newsImage ??=
-                      'https://i.ibb.co/WkWz2sM/placeholder-image.png',
+                  newsImage ?? 'https://i.ibb.co/WkWz2sM/placeholder-image.png',
                   fit: BoxFit.cover,
                   width: double.infinity,
                   height: double.infinity,

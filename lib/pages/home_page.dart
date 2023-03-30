@@ -71,7 +71,9 @@ class HomePage extends StatelessWidget {
                             fontSize: 19.0,
                           ),
                     ),
-                    const ShowAllButton()
+                    const ShowAllButton(
+                      destination: 'recent',
+                    )
                   ],
                 ),
               ),
@@ -81,7 +83,7 @@ class HomePage extends StatelessWidget {
               Container(
                 padding: AppGenricStyles.paddingForList,
                 height: 350.0,
-                child: NewsList(),
+                child: const NewsList(),
               ),
               const SizedBox(
                 height: 10.0,
@@ -98,7 +100,9 @@ class HomePage extends StatelessWidget {
                             fontSize: 19.0,
                           ),
                     ),
-                    const ShowAllButton()
+                    const ShowAllButton(
+                      destination: 'popular',
+                    )
                   ],
                 ),
               ),

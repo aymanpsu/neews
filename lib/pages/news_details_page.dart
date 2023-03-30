@@ -6,20 +6,22 @@ import '../widgets/circle_profile_pic.dart';
 import '../helpers/open_url.dart';
 
 class NewsDetailsPage extends StatelessWidget {
-  NewsDetailsPage({
-    Key? key,
-    this.newsImage,
-    required this.newsTitle,
-    required this.newesDatePublished,
-    this.newsUrl,
-    this.newsDescription,
-  }) : super(key: key);
+  NewsDetailsPage(
+      {Key? key,
+      this.newsImage,
+      required this.newsTitle,
+      required this.newesDatePublished,
+      this.newsUrl,
+      this.newsDescription,
+      this.newsContent})
+      : super(key: key);
 
   late String? newsImage;
   final String newsTitle;
   final DateTime newesDatePublished;
   final String? newsUrl;
   final String? newsDescription;
+  final String? newsContent;
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +45,7 @@ class NewsDetailsPage extends StatelessWidget {
                   bottomRight: Radius.circular(14.0),
                 ),
                 child: Image.network(
-                  newsImage ??=
-                      'https://i.ibb.co/WkWz2sM/placeholder-image.png',
+                  newsImage ?? 'https://i.ibb.co/WkWz2sM/placeholder-image.png',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -79,7 +80,7 @@ class NewsDetailsPage extends StatelessWidget {
                         height: 12.0,
                       ),
                       Text(
-                        newsDescription!,
+                        newsDescription ?? newsContent ?? '',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       // Text(newsUrl.toString()),
