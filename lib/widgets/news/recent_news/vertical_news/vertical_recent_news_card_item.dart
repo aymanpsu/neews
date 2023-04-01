@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../helpers/app_genric_styles.dart';
-import '../../../helpers/covert_datetime.dart';
 
-class NewsCardItem extends StatelessWidget {
-  NewsCardItem({
+import '../../../../helpers/app_genric_styles.dart';
+import '../../../../helpers/covert_datetime.dart';
+
+class VerticalRecentNewsCardItem extends StatelessWidget {
+  VerticalRecentNewsCardItem({
     Key? key,
     this.newsImage,
     required this.newsTitle,
@@ -19,15 +20,15 @@ class NewsCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 25.0, bottom: 5.0),
+      padding: const EdgeInsets.only(top: 25.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: AppGenricStyles.imagesBorderRadius,
           boxShadow: const [AppGenricStyles.lightBoxShadow],
         ),
-        height: double.infinity,
-        width: 320,
+        height: 350.0,
+        width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -85,14 +86,18 @@ class NewsCardItem extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelSmall
-                                    ?.copyWith(fontWeight: FontWeight.w300),
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                               Text(
                                 newsSource!,
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelSmall
-                                    ?.copyWith(fontWeight: FontWeight.w300),
+                                    ?.copyWith(
+                                      fontWeight: FontWeight.w300,
+                                    ),
                               ),
                             ],
                           ),

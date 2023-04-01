@@ -11,6 +11,10 @@ class AppTheme {
     // Define the default font family.
     fontFamily: 'Roboto',
 
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.lightTextColor
+    ),
+
     // Define the default `TextTheme`. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
     textTheme: const TextTheme(
@@ -77,6 +81,6 @@ class AppTheme {
         fontWeight: FontWeight.w200,
         color: Colors.black,
       ),
-    ),
+    ), colorScheme: ColorScheme.fromSwatch().copyWith(secondary: AppColors.lightTextColor),
   );
 }

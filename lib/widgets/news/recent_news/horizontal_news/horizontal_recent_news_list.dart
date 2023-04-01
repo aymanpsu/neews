@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'recent_news_card_item.dart';
-import '../../../services/news_service.dart';
-import '../../../models/news.dart';
-import '../../../pages/news_details_page.dart';
+import 'horizontal_recent_news_card_item.dart';
+import '../../../../services/news_service.dart';
+import '../../../../models/news.dart';
+import '../../../../pages/news_details_page.dart';
 
-class NewsList extends StatefulWidget {
-  const NewsList({Key? key}) : super(key: key);
+class HorizontalRecentNewsList extends StatefulWidget {
+  const HorizontalRecentNewsList({Key? key}) : super(key: key);
 
   @override
-  State<NewsList> createState() => _NewsListState();
+  State<HorizontalRecentNewsList> createState() => _HorizontalRecentNewsListState();
 }
 
-class _NewsListState extends State<NewsList> {
+class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
   late NewsService newsService;
 
   @override
@@ -64,7 +64,7 @@ class _NewsListState extends State<NewsList> {
               ),
             );
           },
-          child: NewsCardItem(
+          child: HorizontalRecentNewsCardItem(
             newsImage: news.articles[index].urlToImage,
             newsTitle: news.articles[index].title,
             newesDatePublished: news.articles[index].publishedAt,

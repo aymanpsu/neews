@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../../models/news.dart';
-import '../../../pages/news_details_page.dart';
-import './popular_news_card.dart';
-import '../../../services/news_service.dart';
+import './vertical_recent_news_card_item.dart';
+import '../../../../models/news.dart';
+import '../../../../pages/news_details_page.dart';
+import '../../../../services/news_service.dart';
 
-class PopularNewsList extends StatefulWidget {
-  const PopularNewsList({Key? key}) : super(key: key);
+class VerticalRecentNewsList extends StatefulWidget {
+  const VerticalRecentNewsList({Key? key}) : super(key: key);
 
   @override
-  State<PopularNewsList> createState() => _PopularNewsListState();
+  State<VerticalRecentNewsList> createState() => _VerticalRecentNewsListState();
 }
 
-class _PopularNewsListState extends State<PopularNewsList> {
+class _VerticalRecentNewsListState extends State<VerticalRecentNewsList> {
   late NewsService newsService;
+  final int _page = 1;
 
   @override
   void initState() {
@@ -21,9 +22,15 @@ class _PopularNewsListState extends State<PopularNewsList> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: newsService.fetchPopularNews(1, 8),
+      future: newsService.fetchRecentNews(_page, 10),
       builder: ((context, snapshot) {
         if (snapshot.hasData) {
           News news = snapshot.data!;
@@ -42,7 +49,7 @@ class _PopularNewsListState extends State<PopularNewsList> {
   Widget _buildListView(News news) {
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       itemBuilder: ((context, index) {
         return GestureDetector(
           onTap: () {
@@ -59,7 +66,7 @@ class _PopularNewsListState extends State<PopularNewsList> {
               ),
             );
           },
-          child: PopularNewsCard(
+          child: VerticalRecentNewsCardItem(
             newsImage: news.articles[index].urlToImage,
             newsTitle: news.articles[index].title,
             newesDatePublished: news.articles[index].publishedAt,

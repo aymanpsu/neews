@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/filters/list_of_filters.dart';
-import '../widgets/news/recent_news/recent_news_list.dart';
+import '../widgets/news/recent_news/horizontal_news/horizontal_recent_news_list.dart';
 import '../helpers/app_genric_styles.dart';
 import '../widgets/show_all_button.dart';
 import '../widgets/news/popular_news/popular_news_list.dart';
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
               Container(
                 padding: AppGenricStyles.paddingForList,
                 height: 350.0,
-                child: const NewsList(),
+                child: const HorizontalRecentNewsList(),
               ),
               const SizedBox(
                 height: 10.0,
