@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../../helpers/app_genric_styles.dart';
-import '../../../helpers/covert_datetime.dart';
+import '../../../../helpers/app_genric_styles.dart';
+import '../../../../helpers/covert_datetime.dart';
 
-class PopularNewsCard extends StatelessWidget {
-  PopularNewsCard({
+class VerticalPopularNewsCardItem extends StatelessWidget {
+  VerticalPopularNewsCardItem({
     Key? key,
-    required this.newsImage,
+    this.newsImage,
     required this.newsTitle,
     required this.newesDatePublished,
     this.newsSource,
@@ -20,15 +20,15 @@ class PopularNewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 25.0, bottom: 5.0),
+      padding: const EdgeInsets.only(top: 25.0),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: AppGenricStyles.imagesBorderRadius,
           boxShadow: const [AppGenricStyles.lightBoxShadow],
         ),
-        height: double.infinity,
-        width: 320,
+        height: 350.0,
+        width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,6 +37,14 @@ class PopularNewsCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: AppGenricStyles.imagesBorderRadius,
                 child: Image.network(
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      'assets/placeholder_image.png',
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
+                    );
+                  },
                   newsImage ?? 'https://i.ibb.co/WkWz2sM/placeholder-image.png',
                   fit: BoxFit.cover,
                   width: double.infinity,

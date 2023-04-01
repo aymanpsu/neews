@@ -27,7 +27,7 @@ class ShowAllButton extends StatelessWidget {
         'Show all',
         style: Theme.of(context).textTheme.titleSmall?.copyWith(
               color: AppColors.lightTextColor,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w300,
               fontSize: 13.0,
             ),
       ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import '../../../models/news.dart';
-import '../../../pages/news_details_page.dart';
-import './popular_news_card.dart';
-import '../../../services/news_service.dart';
+import '../../../../models/news.dart';
+import '../../../../pages/news_details_page.dart';
+import 'horizontal_popular_news_card.dart';
+import '../../../../services/news_service.dart';
 
-class PopularNewsList extends StatefulWidget {
-  const PopularNewsList({Key? key}) : super(key: key);
+class HorizontalPopularNewsList extends StatefulWidget {
+  const HorizontalPopularNewsList({Key? key}) : super(key: key);
 
   @override
-  State<PopularNewsList> createState() => _PopularNewsListState();
+  State<HorizontalPopularNewsList> createState() => _HorizontalPopularNewsListState();
 }
 
-class _PopularNewsListState extends State<PopularNewsList> {
+class _HorizontalPopularNewsListState extends State<HorizontalPopularNewsList> {
   late NewsService newsService;
 
   @override
@@ -59,7 +59,7 @@ class _PopularNewsListState extends State<PopularNewsList> {
               ),
             );
           },
-          child: PopularNewsCard(
+          child: HorizontalPopularNewsCard(
             newsImage: news.articles[index].urlToImage,
             newsTitle: news.articles[index].title,
             newesDatePublished: news.articles[index].publishedAt,

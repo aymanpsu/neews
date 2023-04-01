@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../../../helpers/app_genric_styles.dart';
-import 'horizontal_recent_news_card_item.dart';
-import '../../../../services/news_service.dart';
+import 'vertical_popular_news_card_item.dart';
 import '../../../../models/news.dart';
 import '../../../../pages/news_details_page.dart';
+import '../../../../services/news_service.dart';
 
-class HorizontalRecentNewsList extends StatefulWidget {
-  const HorizontalRecentNewsList({Key? key}) : super(key: key);
+class VerticalPopularNewsList extends StatefulWidget {
+  const VerticalPopularNewsList({Key? key}) : super(key: key);
 
   @override
-  State<HorizontalRecentNewsList> createState() => _HorizontalRecentNewsListState();
+  State<VerticalPopularNewsList> createState() => _VerticalPopularNewsListState();
 }
 
-class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
+class _VerticalPopularNewsListState extends State<VerticalPopularNewsList> {
   late NewsService newsService;
+  final int _page = 1;
 
   @override
   void initState() {
@@ -26,10 +26,11 @@ class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
     super.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: newsService.fetchRecentNews(1, 8),
+      future: newsService.fetchPopularNews(_page, 10),
       builder: ((context, snapshot) {
         if (snapshot.hasData) {
           News news = snapshot.data!;
@@ -47,9 +48,8 @@ class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
 
   Widget _buildListView(News news) {
     return ListView.builder(
-      padding: AppGenricStyles.paddingForList,
       physics: const BouncingScrollPhysics(),
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       itemBuilder: ((context, index) {
         return GestureDetector(
           onTap: () {
@@ -66,7 +66,7 @@ class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
               ),
             );
           },
-          child: HorizontalRecentNewsCardItem(
+          child: VerticalPopularNewsCardItem(
             newsImage: news.articles[index].urlToImage,
             newsTitle: news.articles[index].title,
             newesDatePublished: news.articles[index].publishedAt,

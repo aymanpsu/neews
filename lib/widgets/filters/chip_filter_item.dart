@@ -21,7 +21,7 @@ class _ChipFilterItem extends State<ChipFilterItem> {
   @override
   Widget build(BuildContext context) {
     return ChoiceChip(
-      elevation: 2.0,
+      elevation: 4.0,
       shadowColor: const Color.fromARGB(54, 0, 0, 0),
       avatar: Image.asset(widget.imageName, width: 19.0),
       backgroundColor: Colors.white,

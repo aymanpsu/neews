@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppGenricStyles {
-  static const defultPadding = EdgeInsets.symmetric(horizontal: 10.0);
-  static const paddingForList = EdgeInsets.only(left: 10);
+  static const defultPadding = EdgeInsets.symmetric(horizontal: 18.0);
+  static const paddingForList = EdgeInsets.only(left: 18.0, right: 10.0);
   static BorderRadius defultBorderRadius = BorderRadius.circular(10.0);
   static BorderRadius imagesBorderRadius = BorderRadius.circular(16.0);
   static const lightBoxShadow = BoxShadow(

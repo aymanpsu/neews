@@ -3,7 +3,7 @@ import '../widgets/filters/list_of_filters.dart';
 import '../widgets/news/recent_news/horizontal_news/horizontal_recent_news_list.dart';
 import '../helpers/app_genric_styles.dart';
 import '../widgets/show_all_button.dart';
-import '../widgets/news/popular_news/popular_news_list.dart';
+import '../widgets/news/popular_news/horizontal_news/horizontal_popular_news_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,11 +50,9 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 8.0,
               ),
-              Container(
-                padding: AppGenricStyles.paddingForList,
+              const SizedBox(
                 height: 50.0,
-                // color: Colors.red,
-                child: const ListOfFilters(),
+                child: ListOfFilters(),
               ),
               const SizedBox(
                 height: 10.0,
@@ -80,10 +78,9 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 8.0,
               ),
-              Container(
-                padding: AppGenricStyles.paddingForList,
-                height: 350.0,
-                child: const HorizontalRecentNewsList(),
+              const SizedBox(
+                height: 360.0,
+                child: HorizontalRecentNewsList(),
               ),
               const SizedBox(
                 height: 10.0,
@@ -112,9 +109,10 @@ class HomePage extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: Container(
-                    padding: AppGenricStyles.paddingForList,
-                    height: 350.0,
-                    child: PopularNewsList()),
+                  padding: AppGenricStyles.paddingForList,
+                  height: 350.0,
+                  child: const HorizontalPopularNewsList(),
+                ),
               ),
               const SizedBox(
                 height: 16.0,
