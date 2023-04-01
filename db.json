@@ -1,6 +1,6 @@
 {
     "status": "ok",
-    "totalResults": 38,
+    "totalResults": 5,
     "articles": [
       {
         "source": {
@@ -66,71 +66,6 @@
         "urlToImage": "https://www.reuters.com/resizer/Kfe_Qqrd2RBusOfV2_xGV9WK3Gk=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/E6NO72BE55EQ7BOEK3X2IDE7O4.JPG",
         "publishedAt": "2023-03-23T08:15:00Z",
         "content": "SYDNEY, March 23 (Reuters) - Australia took a step on Thursday towards a historical referendum to give Aboriginal and Torres Strait Islanders recognition in the constitution and, for the first time, … [+3553 chars]"
-      },
-      {
-        "source": {
-          "id": null,
-          "name": "INSIDER"
-        },
-        "author": "Aditi Bharade",
-        "title": "Gwyneth Paltrow not happy about cameras at trial for ski crash - Insider",
-        "description": "Paltrow's attorney, Steve Owens, complained on Wednesday that there was a \"new camera pointed directly\" at Paltrow.",
-        "url": "https://www.insider.com/gwyneth-paltrow-ski-crash-lawsuit-utah-terry-sanderson-2023-3",
-        "urlToImage": "https://i.insider.com/641be75b2d770d001870ba28?width=1200&format=jpeg",
-        "publishedAt": "2023-03-23T08:09:02Z",
-        "content": "Gwyneth Paltrow took offense to a camera being pointed at her during a trial in Utah on Wednesday, where she's battling accusations that she seriously injured a man in a ski collision.\r\nThe trial wil… [+1775 chars]"
-      },
-      {
-        "source": {
-          "id": null,
-          "name": "YouTube"
-        },
-        "author": null,
-        "title": "New York City Braces For Trump Indictment After Ex-President Urges Protests | Donald Trump News - CNN-News18",
-        "description": "New York City Braces For Trump Indictment After Ex-President Urges Protests | Dona;d Trump NewsA Manhattan grand jury could bring charges as soon as this wee...",
-        "url": "https://www.youtube.com/watch?v=90wVAb_QQAE",
-        "urlToImage": "https://i.ytimg.com/vi/90wVAb_QQAE/maxresdefault_live.jpg",
-        "publishedAt": "2023-03-23T07:29:53Z",
-        "content": null
-      },
-      {
-        "source": {
-          "id": null,
-          "name": "CNBC"
-        },
-        "author": "Elliot Smith",
-        "title": "Swiss regulator defends controversial $17 billion writedown of Credit Suisse bonds - CNBC",
-        "description": "Swiss regulator FINMA on Thursday defended its decision to instruct Credit Suisse to write down its AT1 bonds — a controversial part of the lender's emergency sale to UBS.",
-        "url": "https://www.cnbc.com/2023/03/23/swiss-regulator-says-central-bank-loan-to-credit-suisse-justified-at1-bond-writedown.html",
-        "urlToImage": "https://image.cnbcfm.com/api/v1/image/107211168-1679261463500-gettyimages-1248622905-SWITZERLAND_CREDIT_SUISSE.jpeg?v=1679554507&w=1920&h=1080",
-        "publishedAt": "2023-03-23T06:55:07Z",
-        "content": "Swiss regulator FINMA on Thursday defended its decision to instruct Credit Suisse to write down its AT1 bonds a controversial part of the lender's emergency sale to UBS saying it was a \"viability eve… [+2072 chars]"
-      },
-      {
-        "source": {
-          "id": null,
-          "name": "CNBC"
-        },
-        "author": "Yeo Boon Ping",
-        "title": "Stock Markets: Jerome Powell flipped the script - CNBC",
-        "description": "The Federal Reserve hiked interest rates by a quarter point, as markets had expected. They didn't expect Powell's warnings on the economy.",
-        "url": "https://www.cnbc.com/2023/03/23/stock-markets-jerome-powell-flipped-the-script.html",
-        "urlToImage": "https://image.cnbcfm.com/api/v1/image/107213757-1679551766481-gettyimages-1475351843-109a4436_lwznqgdn.jpeg?v=1679552482&w=1920&h=1080",
-        "publishedAt": "2023-03-23T06:21:22Z",
-        "content": "This report is from today's CNBC Daily Open, our new, international markets newsletter. CNBC Daily Open brings investors up to speed on everything they need to know, no matter where they are. Like wh… [+3065 chars]"
-      },
-      {
-        "source": {
-          "id": "cnn",
-          "name": "CNN"
-        },
-        "author": "Taylor Romine, Theresa Waldrop",
-        "title": "Los Angeles area hit by rare tornado -- the strongest one to hit the county since 1983 - CNN",
-        "description": "At least one person was injured after a rare tornado hit a city just southeast of Los Angeles Wednesday, local officials said.",
-        "url": "https://www.cnn.com/2023/03/22/weather/california-montebello-possible-tornado/index.html",
-        "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/230322172900-01-montebello-storm-damage-0322.jpg?c=16x9&q=w_800,c_fill",
-        "publishedAt": "2023-03-23T05:46:00Z",
-        "content": "At least one person was injured after a rare tornado hit a city just southeast of Los Angeles Wednesday, local officials said.\r\nThe National Weather Service confirmed the tornado briefly touched down… [+2967 chars]"
       }
     ]
   }
