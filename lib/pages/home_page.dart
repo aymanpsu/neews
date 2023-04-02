@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
                 height: 8.0,
               ),
               const SizedBox(
-                height: 360.0,
+                height: 350.0,
                 child: HorizontalRecentNewsList(),
               ),
               const SizedBox(
@@ -106,12 +106,11 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 8.0,
               ),
-              Flexible(
+              const Flexible(
                 flex: 1,
-                child: Container(
-                  padding: AppGenricStyles.paddingForList,
+                child: SizedBox(
                   height: 350.0,
-                  child: const HorizontalPopularNewsList(),
+                  child: HorizontalPopularNewsList(),
                 ),
               ),
               const SizedBox(

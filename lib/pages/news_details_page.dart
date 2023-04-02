@@ -67,23 +67,23 @@ class NewsDetailsPage extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const SizedBox(
-                        height: 12.0,
+                        height: 16.0,
                       ),
                       Text(
                         CovertDatetime().displayDatetime(newesDatePublished),
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelSmall
-                            ?.copyWith(fontWeight: FontWeight.w300),
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                              fontWeight: FontWeight.w300,
+                              color: Colors.grey,
+                              letterSpacing: 0.6,
+                            ),
                       ),
                       const SizedBox(
-                        height: 12.0,
+                        height: 16.0,
                       ),
                       Text(
                         newsDescription ?? newsContent ?? '',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      // Text(newsUrl.toString()),
                     ],
                   ),
                 );

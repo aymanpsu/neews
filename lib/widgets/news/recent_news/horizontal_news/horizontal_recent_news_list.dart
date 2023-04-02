@@ -47,7 +47,7 @@ class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
 
   Widget _buildListView(News news) {
     return ListView.builder(
-      padding: AppGenricStyles.paddingForList,
+      padding: AppGenricStyles.defultPadding,
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemBuilder: ((context, index) {

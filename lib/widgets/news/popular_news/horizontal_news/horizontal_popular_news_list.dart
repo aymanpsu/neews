@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../helpers/app_genric_styles.dart';
 import '../../../../models/news.dart';
 import '../../../../pages/news_details_page.dart';
 import 'horizontal_popular_news_card.dart';
@@ -8,7 +9,8 @@ class HorizontalPopularNewsList extends StatefulWidget {
   const HorizontalPopularNewsList({Key? key}) : super(key: key);
 
   @override
-  State<HorizontalPopularNewsList> createState() => _HorizontalPopularNewsListState();
+  State<HorizontalPopularNewsList> createState() =>
+      _HorizontalPopularNewsListState();
 }
 
 class _HorizontalPopularNewsListState extends State<HorizontalPopularNewsList> {
@@ -41,6 +43,7 @@ class _HorizontalPopularNewsListState extends State<HorizontalPopularNewsList> {
 
   Widget _buildListView(News news) {
     return ListView.builder(
+      padding: AppGenricStyles.defultPadding,
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       itemBuilder: ((context, index) {
