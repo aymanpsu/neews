@@ -10,6 +10,7 @@ Flutetr app will help the users to follow the latest and trndy news.
 * [x] Integrate with news API endpoint to fetch news
 * [x] Lunch the URL of news in extrnal browser to view the full news
 * [x] Build See All pages and with vertical scrollDirection
+* [ ] Try to fix fake API to mock data
 * [ ] Add skeleton loading to the app
 * [ ] Add pagination for see all pages to show more news
 * [ ] Reduce number of charcters in name of the source
