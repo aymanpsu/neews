@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 import '../../../../helpers/app_genric_styles.dart';
 import '../../../../helpers/covert_datetime.dart';
 
@@ -41,8 +41,8 @@ class VerticalRecentNewsCardItem extends StatelessWidget {
                   flex: 2,
                   child: ClipRRect(
                     borderRadius: AppGenricStyles.imagesBorderRadius,
-                    child: Image.network(
-                      errorBuilder: (context, error, stackTrace) {
+                    child: CachedNetworkImage(
+                      errorWidget: (context, url, error) {
                         return Image.asset(
                           'assets/placeholder_image.png',
                           fit: BoxFit.cover,
@@ -50,7 +50,15 @@ class VerticalRecentNewsCardItem extends StatelessWidget {
                           height: double.infinity,
                         );
                       },
-                      newsImage ?? 'https://i.ibb.co/WkWz2sM/placeholder-image.png',
+                      placeholder: (context, url) {
+                        return Container(
+                          color: Colors.grey[200],
+                          width: double.infinity,
+                          height: double.infinity,
+                        );
+                      },
+                      imageUrl: newsImage ??
+                          'https://i.ibb.co/WkWz2sM/placeholder-image.png',
                       fit: BoxFit.cover,
                       width: double.infinity,
                       height: double.infinity,
@@ -83,7 +91,8 @@ class VerticalRecentNewsCardItem extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.only(bottom: 20.0),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
                                     CovertDatetime()
