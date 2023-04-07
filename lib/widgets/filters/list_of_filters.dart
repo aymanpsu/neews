@@ -22,6 +22,7 @@ class _ListOfFiltersState extends State<ListOfFilters> {
         return ChipFilterItem(
           imageName: LocalData().newsFiltersList[index].icon,
           filterName: LocalData().newsFiltersList[index].name,
+          filterIndex: index,
         );
       },
       separatorBuilder: (context, index) => const SizedBox(width: 8.0),

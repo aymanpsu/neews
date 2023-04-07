@@ -11,6 +11,7 @@ class AppTheme {
     // Define the default font family.
     fontFamily: 'Roboto',
 
+
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.lightTextColor
     ),

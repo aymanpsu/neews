@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import '../../../../helpers/app_genric_styles.dart';
 import '../../../../helpers/covert_datetime.dart';
+import '../../../skeletons/default_image.dart';
+import '../../../skeletons/image_placeholder.dart';
 
 class VerticalRecentNewsCardItem extends StatelessWidget {
   VerticalRecentNewsCardItem({
@@ -43,19 +45,10 @@ class VerticalRecentNewsCardItem extends StatelessWidget {
                     borderRadius: AppGenricStyles.imagesBorderRadius,
                     child: CachedNetworkImage(
                       errorWidget: (context, url, error) {
-                        return Image.asset(
-                          'assets/placeholder_image.png',
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: double.infinity,
-                        );
+                        return const DefaultImage();
                       },
                       placeholder: (context, url) {
-                        return Container(
-                          color: Colors.grey[200],
-                          width: double.infinity,
-                          height: double.infinity,
-                        );
+                        return const ImagePlaceholder();
                       },
                       imageUrl: newsImage ??
                           'https://i.ibb.co/WkWz2sM/placeholder-image.png',

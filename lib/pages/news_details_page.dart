@@ -1,9 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '.././helpers/app_colors.dart';
 import '../helpers/app_genric_styles.dart';
 import '../helpers/covert_datetime.dart';
 import '../widgets/circle_profile_pic.dart';
 import '../helpers/open_url.dart';
+import '../widgets/skeletons/default_image.dart';
+import '../widgets/skeletons/image_placeholder.dart';
 
 class NewsDetailsPage extends StatelessWidget {
   NewsDetailsPage(
@@ -44,8 +47,15 @@ class NewsDetailsPage extends StatelessWidget {
                   bottomLeft: Radius.circular(14.0),
                   bottomRight: Radius.circular(14.0),
                 ),
-                child: Image.network(
-                  newsImage ?? 'https://i.ibb.co/WkWz2sM/placeholder-image.png',
+                child: CachedNetworkImage(
+                  errorWidget: (context, url, error) {
+                    return const DefaultImage();
+                  },
+                  placeholder: (context, url) {
+                    return const ImagePlaceholder();
+                  },
+                  imageUrl: newsImage ??
+                      'https://i.ibb.co/WkWz2sM/placeholder-image.png',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -64,6 +74,7 @@ class NewsDetailsPage extends StatelessWidget {
                       ),
                       Text(
                         newsTitle,
+                        maxLines: 3,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const SizedBox(
