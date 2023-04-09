@@ -4,6 +4,7 @@ import '../../../../models/news.dart';
 import '../../../../pages/news_details_page.dart';
 import 'horizontal_popular_news_card.dart';
 import '../../../../services/news_service.dart';
+import '../../../skeletons/news_skeleton_card.dart';
 
 class HorizontalPopularNewsList extends StatefulWidget {
   const HorizontalPopularNewsList({Key? key}) : super(key: key);
@@ -33,10 +34,8 @@ class _HorizontalPopularNewsListState extends State<HorizontalPopularNewsList> {
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-        // By default, show a loading spinner.
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        // By default, show skeleton loading.
+        return const NewsSkeletonCardItem();
       }),
     );
   }

@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'News app',
       theme: AppTheme().lightTheme,
+      themeMode: ThemeMode.light,
       home: const HomePage(),
     );
   }

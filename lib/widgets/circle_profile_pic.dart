@@ -20,8 +20,8 @@ class CircleProfilePic extends StatelessWidget {
           ),
           child: Image.asset(
             'assets/users-profile/user_$index.jpeg',
-            width: 28.0,
-            height: 28.0,
+            width: 26.0,
+            height: 26.0,
             fit: BoxFit.cover,
           ),
         ),

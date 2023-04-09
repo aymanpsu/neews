@@ -8,12 +8,11 @@ Flutetr app will help the users to follow the latest and trndy news.
 ![UI Image](https://i.ibb.co/D4qSt76/original-8e4e58594fe5821f8bccf6bb9da1c8d7.webp)
 * [x] Clone UI for Home page, news details page
 * [x] Integrate with news API endpoint to fetch news
-* [x] Lunch the URL of news in extrnal browser to view the full news
+* [x] Lunch the URL of news in extrnal browser to view the full news page
 * [x] Build See All pages and with vertical scrollDirection
 * [x] Add cached_network_image to not load images from online everytime
-* [ ] Add Hero animation for news image
 * [ ] Try to fix fake API to mock data
-* [ ] Add skeleton loading to the app
+* [x] Add skeleton loading to the app
 * [ ] Add pagination for see all pages to show more news
 * [ ] Reduce number of charcters in name of the source
 * [x] Fix the issue of git ssh

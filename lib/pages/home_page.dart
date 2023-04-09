@@ -4,6 +4,7 @@ import '../widgets/news/recent_news/horizontal_news/horizontal_recent_news_list.
 import '../helpers/app_genric_styles.dart';
 import '../widgets/show_all_button.dart';
 import '../widgets/news/popular_news/horizontal_news/horizontal_popular_news_list.dart';
+import '../pages/search_for_news.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -30,17 +31,26 @@ class HomePage extends StatelessWidget {
                       'Today news',
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: AppGenricStyles.defultBorderRadius,
-                        boxShadow: const [AppGenricStyles.lightBoxShadow],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(6.8),
-                        child: Image.asset(
-                          'assets/icons/search_icon.png',
-                          width: 20,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SearchForNews(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: AppGenricStyles.defultBorderRadius,
+                          boxShadow: const [AppGenricStyles.lightBoxShadow],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(6.8),
+                          child: Image.asset(
+                            'assets/icons/search_icon.png',
+                            width: 20,
+                          ),
                         ),
                       ),
                     )

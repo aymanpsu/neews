@@ -152,8 +152,8 @@ class NewsDetailsPage extends StatelessWidget {
                                           ),
                                           color: Colors.white),
                                       // color: Colors.grey[50],
-                                      width: 28.0,
-                                      height: 28.0,
+                                      width: 26.0,
+                                      height: 26.0,
                                       child: const Center(
                                         child: Text(
                                           '+15',

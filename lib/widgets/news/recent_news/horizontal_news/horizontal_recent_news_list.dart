@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../helpers/app_genric_styles.dart';
+import '../../../skeletons/news_skeleton_card.dart';
 import 'horizontal_recent_news_card_item.dart';
 import '../../../../services/news_service.dart';
 import '../../../../models/news.dart';
@@ -37,10 +38,8 @@ class _HorizontalRecentNewsListState extends State<HorizontalRecentNewsList> {
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
         }
-        // By default, show a loading spinner.
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
+        // By default, show skeleton loading.
+        return const NewsSkeletonCardItem();
       }),
     );
   }
