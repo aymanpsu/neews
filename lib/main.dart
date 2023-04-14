@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News app',
+      title: 'Neews',
       theme: AppTheme().lightTheme,
       themeMode: ThemeMode.light,
       home: const HomePage(),
