@@ -8,6 +8,7 @@ Map<String, String> requestHeaders = {
   'Content-type': '	application/json; charset=utf-8',
   'Accept': 'application/json'
 };
+const String searchQ = 'popular news';
 
 class NewsService {
   Future<News> fetchRecentNews(int page, int pageNumber,
@@ -39,7 +40,7 @@ class NewsService {
     try {
       final response = await http.get(
         Uri.parse(
-          '$baseUrl/everything?pageSize=$pageSize&apiKey=$apiKey&page=$page&sortBy=popularity&q=trend',
+          '$baseUrl/everything?pageSize=$pageSize&apiKey=$apiKey&page=$page&sortBy=publishedAt&q=$searchQ',
         ),
         headers: requestHeaders,
       );

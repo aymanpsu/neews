@@ -14,9 +14,11 @@ Flutetr app will help the users to follow the latest and trndy news.
 * [ ] Try to fix fake API to mock data
 * [x] Add skeleton loading to the app
 * [x] Update app icone and name
+* [x] Optimize popluar news results
 * [ ] Add pagination for see all pages to show more news
 * [ ] Reduce number of charcters in name of the source
 * [ ] Fix the shadow border UI issue
+* [ ] Pass opject rather than spreare vlaues
 * [x] Fix the issue of git ssh
 * [ ] Build the filters state to work with news API
 * [ ] Create search UI and with state

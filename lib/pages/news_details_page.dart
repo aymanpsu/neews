@@ -93,7 +93,9 @@ class NewsDetailsPage extends StatelessWidget {
                       ),
                       Text(
                         newsDescription ?? newsContent ?? '',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              height: 1.33
+                            ),
                       ),
                     ],
                   ),
@@ -123,8 +125,11 @@ class NewsDetailsPage extends StatelessWidget {
                                   'assets/icons/lightning.png',
                                   width: 20.0,
                                 ),
+                                const SizedBox(
+                                  width: 6.0,
+                                ),
                                 const Text(
-                                  ' Now discussing',
+                                  'Now discussing',
                                   style: TextStyle(fontWeight: FontWeight.w600),
                                 ),
                               ],
@@ -182,11 +187,14 @@ class NewsDetailsPage extends StatelessWidget {
                         ),
                         onPressed: (() async => OpenUrl().launchTheUrl(url)),
                         child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                          padding: const EdgeInsets.all(14.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text('Click to view '),
+                              const Text('Click to view'),
+                              const SizedBox(
+                                width: 12.0,
+                              ),
                               Image.asset('assets/icons/right_up_arrow.png')
                             ],
                           ),
